@@ -2,95 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Portfolio Design System - Dark Navy Theme with Purple Accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Portfolio Dark Theme Colors */
+    --portfolio-background: 220 35% 8%;
+    --portfolio-background-secondary: 220 25% 12%;
+    --portfolio-foreground: 210 40% 95%;
+    --portfolio-muted: 220 15% 60%;
+    
+    /* Purple Gradient Colors */
+    --portfolio-purple-start: 270 100% 70%;
+    --portfolio-purple-end: 240 100% 65%;
+    --portfolio-blue-accent: 210 100% 60%;
+    
+    /* Interactive Elements */
+    --portfolio-button-primary: 270 100% 65%;
+    --portfolio-button-secondary: 220 25% 15%;
+    --portfolio-button-hover: 270 100% 60%;
+    
+    /* Cards and Surfaces */
+    --portfolio-card: 220 25% 10%;
+    --portfolio-card-hover: 220 25% 12%;
+    --portfolio-border: 220 25% 20%;
+    
+    /* Skills Circle Animation */
+    --portfolio-skills-primary: 270 100% 65%;
+    --portfolio-skills-secondary: 210 100% 60%;
+    
+    /* Project Cards */
+    --portfolio-project-bg: 220 25% 10%;
+    --portfolio-project-border: 220 25% 18%;
+    
+    /* Standard shadcn mappings for compatibility */
+    --background: var(--portfolio-background);
+    --foreground: var(--portfolio-foreground);
+    --card: var(--portfolio-card);
+    --card-foreground: var(--portfolio-foreground);
+    --popover: var(--portfolio-card);
+    --popover-foreground: var(--portfolio-foreground);
+    --primary: var(--portfolio-purple-start);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--portfolio-button-secondary);
+    --secondary-foreground: var(--portfolio-foreground);
+    --muted: var(--portfolio-background-secondary);
+    --muted-foreground: var(--portfolio-muted);
+    --accent: var(--portfolio-blue-accent);
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --destructive-foreground: 0 0% 100%;
+    --border: var(--portfolio-border);
+    --input: var(--portfolio-border);
+    --ring: var(--portfolio-purple-start);
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  /* Portfolio-specific gradient classes */
+  .portfolio-gradient-text {
+    background: linear-gradient(135deg, 
+      hsl(var(--portfolio-purple-start)), 
+      hsl(var(--portfolio-blue-accent))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .portfolio-gradient-bg {
+    background: linear-gradient(135deg, 
+      hsl(var(--portfolio-background)) 0%, 
+      hsl(var(--portfolio-background-secondary)) 100%
+    );
+  }
+  
+  .portfolio-button-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--portfolio-purple-start)), 
+      hsl(var(--portfolio-purple-end))
+    );
+  }
+  
+  .portfolio-button-gradient:hover {
+    background: linear-gradient(135deg, 
+      hsl(var(--portfolio-button-hover)), 
+      hsl(var(--portfolio-purple-start))
+    );
+  }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+  /* Skills circle animation */
+  @keyframes rotate-skills {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .skills-orbit {
+    animation: rotate-skills 20s linear infinite;
+  }
+  
+  .skills-orbit-reverse {
+    animation: rotate-skills 25s linear infinite reverse;
+  }
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  /* Floating animation for hero elements */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
   }
 }
 
