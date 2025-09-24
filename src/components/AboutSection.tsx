@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import profileImage from "@/assets/profile-photo.png";
 
 const AboutSection = () => {
   return (
@@ -10,8 +11,8 @@ const AboutSection = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-2xl overflow-hidden border-4 border-portfolio-border">
                 <img 
-                  src="https://vigneshwaran.tech/VigneshwaranB.png" 
-                  alt="Vigneshwaran" 
+                  src={profileImage} 
+                  alt="Thanniru Vaishnavi" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -28,9 +29,9 @@ const AboutSection = () => {
                 About Me
               </h2>
               <p className="text-lg text-portfolio-muted leading-relaxed">
-                I'm always curious and eager to learn new things. I enjoy turning ideas into solutions 
-                and working with others to create something meaningful. I believe growth comes from both 
-                challenges and experience. Let's connect and share ideas—I'd love to hear from you!
+                Hi! I'm Thanniru Vaishnavi, a passionate Software Developer with a strong foundation in modern web technologies. 
+                I love creating efficient, scalable solutions and am always eager to learn new technologies and tackle challenging problems. 
+                My journey in software development has been driven by curiosity and a desire to build meaningful applications that make a difference.
               </p>
             </div>
 

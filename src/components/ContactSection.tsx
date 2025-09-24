@@ -107,7 +107,7 @@ const ContactSection = () => {
                     </h4>
                     <div className="flex space-x-4 mt-3">
                       <a 
-                        href="https://github.com/vigneshwaranbalamurugan" 
+                        href="https://github.com/thanniruvaishnavi" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
@@ -116,7 +116,7 @@ const ContactSection = () => {
                         <span>GitHub</span>
                       </a>
                       <a 
-                        href="https://www.linkedin.com/in/vigneshwaran30/" 
+                        href="https://www.linkedin.com/in/thanniru-vaishnavi-49828428b/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
@@ -125,7 +125,7 @@ const ContactSection = () => {
                         <span>LinkedIn</span>
                       </a>
                       <a 
-                        href="mailto:vigneshsobalamurugan2005@gmail.com"
+                        href="mailto:thanniruvaishnavi9849@gmail.com"
                         className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
                       >
                         <Mail className="h-5 w-5" />

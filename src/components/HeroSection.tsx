@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Code, Download, MessageCircle } from "lucide-react";
 import SkillsCircle from "./SkillsCircle";
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center portfolio-gradient-bg">
@@ -20,10 +27,10 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold">
                 <span className="text-portfolio-foreground">I'm </span>
-                <span className="portfolio-gradient-text">Vigneshwaran B</span>
+                <span className="portfolio-gradient-text">Thanniru Vaishnavi</span>
               </h1>
               <h2 className="text-3xl lg:text-4xl font-semibold text-portfolio-purple-start flex items-center justify-center lg:justify-start">
-                Backend Developer <span className="ml-2">🔥</span>
+                Software Developer <span className="ml-2">🔥</span>
               </h2>
             </div>
 
@@ -40,6 +47,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg"
                 className="bg-portfolio-button-secondary border-portfolio-border text-portfolio-foreground hover:bg-portfolio-card-hover"
+                onClick={() => window.open('/Thanniru-Vaishnavi-Resume.pdf', '_blank')}
               >
                 <Download className="h-5 w-5 mr-2" />
                 My Resume
@@ -47,6 +55,7 @@ const HeroSection = () => {
               <Button 
                 size="lg"
                 className="portfolio-button-gradient border-0 text-white hover:text-white"
+                onClick={() => scrollToSection('contact')}
               >
                 <MessageCircle className="h-5 w-5 mr-2" />
                 Contact Me
@@ -56,7 +65,7 @@ const HeroSection = () => {
             {/* Social Links */}
             <div className="flex space-x-6 justify-center lg:justify-start">
               <a 
-                href="https://github.com/vigneshwaranbalamurugan" 
+                href="https://github.com/thanniruvaishnavi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-portfolio-card border border-portfolio-border text-portfolio-foreground hover:text-portfolio-purple-start hover:border-portfolio-purple-start transition-all duration-300"
@@ -64,7 +73,7 @@ const HeroSection = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://www.linkedin.com/in/vigneshwaran30/" 
+                href="https://www.linkedin.com/in/thanniru-vaishnavi-49828428b/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-portfolio-card border border-portfolio-border text-portfolio-foreground hover:text-portfolio-purple-start hover:border-portfolio-purple-start transition-all duration-300"
@@ -72,13 +81,15 @@ const HeroSection = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:vigneshsobalamurugan2005@gmail.com"
+                href="mailto:thanniruvaishnavi9849@gmail.com"
                 className="p-3 rounded-full bg-portfolio-card border border-portfolio-border text-portfolio-foreground hover:text-portfolio-purple-start hover:border-portfolio-purple-start transition-all duration-300"
               >
                 <Mail className="h-5 w-5" />
               </a>
               <a 
-                href="#" 
+                href="https://github.com/thanniruvaishnavi" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="p-3 rounded-full bg-portfolio-card border border-portfolio-border text-portfolio-foreground hover:text-portfolio-purple-start hover:border-portfolio-purple-start transition-all duration-300"
               >
                 <Code className="h-5 w-5" />

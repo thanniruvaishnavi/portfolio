@@ -34,10 +34,10 @@ const SkillsCircle = () => {
           return (
             <div
               key={skill.name}
-              className="absolute w-12 h-12 flex items-center justify-center bg-portfolio-card border-2 border-portfolio-border rounded-full hover:scale-110 transition-transform duration-300 hover:border-portfolio-purple-start"
+              className="absolute w-16 h-16 flex items-center justify-center bg-white border-4 border-white rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
               style={{
-                left: `calc(50% + ${x}px - 24px)`,
-                top: `calc(50% + ${y}px - 24px)`,
+                left: `calc(50% + ${x}px - 32px)`,
+                top: `calc(50% + ${y}px - 32px)`,
               }}
               title={skill.name}
             >
@@ -58,10 +58,10 @@ const SkillsCircle = () => {
           return (
             <div
               key={skill.name}
-              className="absolute w-10 h-10 flex items-center justify-center bg-portfolio-card border-2 border-portfolio-border rounded-full hover:scale-110 transition-transform duration-300 hover:border-portfolio-purple-start"
+              className="absolute w-14 h-14 flex items-center justify-center bg-white border-4 border-white rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
               style={{
-                left: `calc(50% + ${x}px - 20px)`,
-                top: `calc(50% + ${y}px - 20px)`,
+                left: `calc(50% + ${x}px - 28px)`,
+                top: `calc(50% + ${y}px - 28px)`,
               }}
               title={skill.name}
             >

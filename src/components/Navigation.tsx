@@ -16,68 +16,58 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Code className="h-8 w-8 text-portfolio-purple-start" />
-            <div className="text-xl font-bold">
-              <span className="text-portfolio-foreground">VB.</span>
-              <span className="text-sm text-portfolio-muted ml-2">PORTFOLIO</span>
-            </div>
+          <div className="text-xl font-bold">
+            <span className="text-portfolio-foreground">TV.</span>
+            <span className="text-sm text-portfolio-muted ml-2">PORTFOLIO</span>
           </div>
-
-          {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
-            >
-              <Home className="h-4 w-4" />
-              <span>Home</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
-            >
-              <User className="h-4 w-4" />
-              <span>About</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('expertise')}
-              className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
-            >
-              <Code className="h-4 w-4" />
-              <span>Expertise</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
-            >
-              <Briefcase className="h-4 w-4" />
-              <span>Projects</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('education')}
-              className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
-            >
-              <GraduationCap className="h-4 w-4" />
-              <span>Education</span>
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
-            >
-              <Mail className="h-4 w-4" />
-              <span>Contact</span>
-            </button>
-          </div>
-
-          {/* Edit Button */}
-          <Button 
-            variant="outline" 
-            size="sm"
-            className="portfolio-button-gradient border-0 text-white hover:text-white"
-          >
-            <Edit className="h-4 w-4 mr-2" />
-            Edit
-          </Button>
         </div>
+
+        {/* Navigation Links */}
+        <div className="hidden md:flex items-center space-x-8">
+          <button
+            onClick={() => scrollToSection('home')}
+            className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
+          >
+            <Home className="h-4 w-4" />
+            <span>Home</span>
+          </button>
+          <button
+            onClick={() => scrollToSection('about')}
+            className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
+          >
+            <User className="h-4 w-4" />
+            <span>About</span>
+          </button>
+          <button
+            onClick={() => scrollToSection('expertise')}
+            className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
+          >
+            <Code className="h-4 w-4" />
+            <span>Expertise</span>
+          </button>
+          <button
+            onClick={() => scrollToSection('projects')}
+            className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
+          >
+            <Briefcase className="h-4 w-4" />
+            <span>Projects</span>
+          </button>
+          <button
+            onClick={() => scrollToSection('education')}
+            className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
+          >
+            <GraduationCap className="h-4 w-4" />
+            <span>Education</span>
+          </button>
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="flex items-center space-x-2 text-portfolio-foreground hover:text-portfolio-purple-start transition-colors duration-300"
+          >
+            <Mail className="h-4 w-4" />
+            <span>Contact</span>
+          </button>
+        </div>
+      </div>
       </div>
     </nav>
   );
