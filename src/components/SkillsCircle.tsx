@@ -15,7 +15,7 @@ const SkillsCircle = () => {
   ];
 
   return (
-    <div className="relative flex items-center justify-center w-96 h-96">
+    <div className="relative flex items-center justify-center w-[500px] h-[500px]">
       {/* Center Text */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-center">
@@ -27,7 +27,7 @@ const SkillsCircle = () => {
       <div className="absolute skills-orbit">
         {skills.slice(0, 8).map((skill, index) => {
           const angle = (index * 45) * (Math.PI / 180);
-          const radius = 150;
+          const radius = 180;
           const x = Math.cos(angle) * radius;
           const y = Math.sin(angle) * radius;
           
@@ -38,7 +38,7 @@ const SkillsCircle = () => {
               style={{
                 left: `calc(50% + ${x}px - 32px)`,
                 top: `calc(50% + ${y}px - 32px)`,
-                backgroundColor: skill.bgColor,
+                backgroundColor: '#2a2a2a',
               }}
               title={skill.name}
             >
@@ -52,7 +52,7 @@ const SkillsCircle = () => {
       <div className="absolute skills-orbit-reverse">
         {skills.slice(8).map((skill, index) => {
           const angle = (index * 90) * (Math.PI / 180);
-          const radius = 100;
+          const radius = 120;
           const x = Math.cos(angle) * radius;
           const y = Math.sin(angle) * radius;
           
@@ -63,7 +63,7 @@ const SkillsCircle = () => {
               style={{
                 left: `calc(50% + ${x}px - 28px)`,
                 top: `calc(50% + ${y}px - 28px)`,
-                backgroundColor: skill.bgColor,
+                backgroundColor: '#2a2a2a',
               }}
               title={skill.name}
             >
@@ -74,8 +74,8 @@ const SkillsCircle = () => {
       </div>
 
       {/* Dotted circle paths */}
-      <div className="absolute w-80 h-80 border-4 border-dashed border-white/70 rounded-full"></div>
-      <div className="absolute w-52 h-52 border-4 border-dashed border-white/70 rounded-full"></div>
+      <div className="absolute w-96 h-96 border-4 border-dashed border-white/70 rounded-full"></div>
+      <div className="absolute w-64 h-64 border-4 border-dashed border-white/70 rounded-full"></div>
     </div>
   );
 };
