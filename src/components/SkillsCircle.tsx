@@ -1,17 +1,17 @@
 const SkillsCircle = () => {
   const skills = [
-    { name: 'React', icon: '⚛️', color: '#61DAFB' },
-    { name: 'Node.js', icon: '🟢', color: '#339933' },
-    { name: 'AWS', icon: '☁️', color: '#FF9900' },
-    { name: 'Docker', icon: '🐳', color: '#2496ED' },
-    { name: 'MongoDB', icon: '🍃', color: '#47A248' },
-    { name: 'JavaScript', icon: '🟨', color: '#F7DF1E' },
-    { name: 'Python', icon: '🐍', color: '#3776AB' },
-    { name: 'Kubernetes', icon: '⚙️', color: '#326CE5' },
-    { name: 'Git', icon: '📝', color: '#F05032' },
-    { name: 'Linux', icon: '🐧', color: '#FCC624' },
-    { name: 'TypeScript', icon: '📘', color: '#3178C6' },
-    { name: 'Express', icon: '🚀', color: '#000000' },
+    { name: 'React', icon: '⚛️', bgColor: '#61DAFB' },
+    { name: 'Node.js', icon: '🟢', bgColor: '#339933' },
+    { name: 'AWS', icon: '☁️', bgColor: '#FF9900' },
+    { name: 'Docker', icon: '🐳', bgColor: '#2496ED' },
+    { name: 'MongoDB', icon: '🍃', bgColor: '#47A248' },
+    { name: 'JavaScript', icon: '🟨', bgColor: '#F7DF1E' },
+    { name: 'Python', icon: '🐍', bgColor: '#3776AB' },
+    { name: 'Kubernetes', icon: '⚙️', bgColor: '#326CE5' },
+    { name: 'Git', icon: '📝', bgColor: '#F05032' },
+    { name: 'Linux', icon: '🐧', bgColor: '#FCC624' },
+    { name: 'TypeScript', icon: '📘', bgColor: '#3178C6' },
+    { name: 'Express', icon: '🚀', bgColor: '#000000' },
   ];
 
   return (
@@ -34,10 +34,11 @@ const SkillsCircle = () => {
           return (
             <div
               key={skill.name}
-              className="absolute w-16 h-16 flex items-center justify-center bg-portfolio-card border border-portfolio-border rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
+              className="absolute w-16 h-16 flex items-center justify-center rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
               style={{
                 left: `calc(50% + ${x}px - 32px)`,
                 top: `calc(50% + ${y}px - 32px)`,
+                backgroundColor: skill.bgColor,
               }}
               title={skill.name}
             >
@@ -58,10 +59,11 @@ const SkillsCircle = () => {
           return (
             <div
               key={skill.name}
-              className="absolute w-14 h-14 flex items-center justify-center bg-portfolio-card border border-portfolio-border rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
+              className="absolute w-14 h-14 flex items-center justify-center rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
               style={{
                 left: `calc(50% + ${x}px - 28px)`,
                 top: `calc(50% + ${y}px - 28px)`,
+                backgroundColor: skill.bgColor,
               }}
               title={skill.name}
             >
@@ -72,8 +74,8 @@ const SkillsCircle = () => {
       </div>
 
       {/* Dotted circle paths */}
-      <div className="absolute w-80 h-80 border-4 border-dashed border-white/50 rounded-full"></div>
-      <div className="absolute w-52 h-52 border-4 border-dashed border-white/50 rounded-full"></div>
+      <div className="absolute w-80 h-80 border-4 border-dashed border-white/70 rounded-full"></div>
+      <div className="absolute w-52 h-52 border-4 border-dashed border-white/70 rounded-full"></div>
     </div>
   );
 };
