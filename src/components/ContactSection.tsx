@@ -2,27 +2,54 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail, Sparkles, Heart, Zap, Users } from "lucide-react";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Github, Linkedin, Mail, Sparkles, Heart, Zap, Users, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useToast } from "@/hooks/use-toast";
+
+const formSchema = z.object({
+  name: z.string().trim().min(2, { message: "Name must be at least 2 characters." }).max(50, { message: "Name must be less than 50 characters." }),
+  email: z.string().trim().email({ message: "Please enter a valid email address." }),
+  message: z.string().trim().min(10, { message: "Message must be at least 10 characters." }).max(500, { message: "Message must be less than 500 characters." })
+});
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: ""
+    }
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      // For now, just show success message
+      // Real email functionality would require backend integration
+      console.log("Form submitted:", values);
+      setIsSubmitted(true);
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      form.reset();
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -144,63 +171,95 @@ const ContactSection = () => {
               Send Me a Message
             </h3>
 
-            <Card className="p-8 bg-portfolio-card border-portfolio-border">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-portfolio-foreground">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground"
-                    placeholder="Your name"
-                    required
-                  />
+            <Card className="p-8 bg-portfolio-card border-portfolio-border hover:border-portfolio-purple-start/50 transition-all duration-300">
+              {isSubmitted ? (
+                <div className="text-center space-y-4 py-12">
+                  <div className="w-16 h-16 rounded-full portfolio-button-gradient flex items-center justify-center mx-auto shadow-lg shadow-portfolio-purple-start/30">
+                    <CheckCircle className="h-8 w-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-portfolio-foreground">Thank you!</h4>
+                  <p className="text-portfolio-muted">Your message has been sent successfully. I'll get back to you soon!</p>
                 </div>
+              ) : (
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-medium text-portfolio-foreground">
+                            Name
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your name"
+                              className="bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground focus:border-portfolio-purple-start focus:ring-portfolio-purple-start/20"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-portfolio-foreground">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                </div>
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-medium text-portfolio-foreground">
+                            Email
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder="your.email@example.com"
+                              className="bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground focus:border-portfolio-purple-start focus:ring-portfolio-purple-start/20"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-portfolio-foreground">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground min-h-[120px]"
-                    placeholder="Tell me about your project or just say hello!"
-                    required
-                  />
-                </div>
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-sm font-medium text-portfolio-foreground">
+                            Message
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Tell me about your project or just say hello!"
+                              className="bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground min-h-[120px] focus:border-portfolio-purple-start focus:ring-portfolio-purple-start/20"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
-                <Button 
-                  type="submit"
-                  className="w-full portfolio-button-gradient border-0 text-white hover:text-white"
-                  size="lg"
-                >
-                  Send Message
-                </Button>
-              </form>
+                    <Button 
+                      type="submit"
+                      disabled={form.formState.isSubmitting}
+                      className="w-full portfolio-button-gradient border-0 text-white hover:text-white hover:opacity-90 transition-opacity duration-300"
+                      size="lg"
+                    >
+                      {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+                    </Button>
+                  </form>
+                </Form>
+              )}
             </Card>
+            
+            <div className="text-center text-sm text-portfolio-muted">
+              <p>For actual email delivery, connect to Supabase backend integration.</p>
+            </div>
           </div>
         </div>
       </div>
