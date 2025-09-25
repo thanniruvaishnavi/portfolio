@@ -44,13 +44,17 @@ const HeroSection = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
+                asChild
                 variant="outline" 
                 size="lg"
                 className="bg-portfolio-button-secondary border-portfolio-border text-portfolio-foreground hover:bg-portfolio-card-hover"
-                onClick={() => window.open('/Thanniru-Vaishnavi-Resume.pdf', '_blank')}
               >
-                <Download className="h-5 w-5 mr-2" />
-                My Resume
+                <a href="/Thanniru-Vaishnavi-Resume.pdf" download="Thanniru-Vaishnavi-Resume.pdf">
+                  <span className="inline-flex items-center">
+                    <Download className="h-5 w-5 mr-2" />
+                    My Resume
+                  </span>
+                </a>
               </Button>
               <Button 
                 size="lg"

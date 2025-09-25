@@ -74,8 +74,8 @@ const SkillsCircle = () => {
       </div>
 
       {/* Dotted circle paths */}
-      <div className="absolute w-96 h-96 border-4 border-dashed border-white/70 rounded-full"></div>
-      <div className="absolute w-64 h-64 border-4 border-dashed border-white/70 rounded-full"></div>
+      <div className="absolute w-96 h-96 border-2 border-dashed border-white/70 rounded-full"></div>
+      <div className="absolute w-64 h-64 border-2 border-dashed border-white/70 rounded-full"></div>
     </div>
   );
 };
