@@ -121,9 +121,9 @@ const FooterSection = () => {
 
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-portfolio-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-portfolio-text-secondary">
-            <p>© 2025 | All rights reserved</p>
-            <p>
+          <div className="flex flex-col md:flex-row justify-between items-center px-8 py-4 text-sm text-portfolio-text-secondary">
+            <p className="text-center md:text-left">© 2025 | All rights reserved</p>
+            <p className="text-center md:text-right">
               Designed & Developed with <span className="text-red-400">❤️</span> by{" "}
               <span className="text-white font-medium">Thanniru Vaishnavi</span>
             </p>
