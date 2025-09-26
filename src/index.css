@@ -124,7 +124,7 @@
 
   /* Custom cursor styles */
   .custom-cursor {
-    cursor: url('./assets/cursor-triangle.png'), auto;
+    cursor: url('./assets/cursor-triangle-animated.png'), auto;
   }
 
   .custom-cursor * {

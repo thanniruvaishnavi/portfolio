@@ -89,8 +89,8 @@ const ProjectsSection = () => {
           <p className="text-portfolio-purple-start font-semibold uppercase tracking-wider">
             PORTFOLIO SHOWCASE
           </p>
-          <h2 className="text-5xl font-bold text-portfolio-foreground">
-            Featured Projects
+          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
+            FEATURED PROJECTS
           </h2>
           <p className="text-xl text-portfolio-muted max-w-3xl mx-auto">
             A collection of my recent work across various technologies and domains. 

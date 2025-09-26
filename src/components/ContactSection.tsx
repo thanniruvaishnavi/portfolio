@@ -59,8 +59,8 @@ const ContactSection = () => {
           <p className="text-portfolio-purple-start font-semibold uppercase tracking-wider">
             Let's Talk
           </p>
-          <h2 className="text-5xl font-bold text-portfolio-foreground">
-            Contact Me
+          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
+            CONTACT ME
           </h2>
           <p className="text-xl text-portfolio-muted max-w-2xl mx-auto">
             Have a question or want to work together? Feel free to reach out!
