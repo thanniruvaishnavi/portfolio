@@ -9,7 +9,17 @@ const FooterSection = () => {
   };
 
   return (
-    <footer className="bg-portfolio-background border-t border-portfolio-border">
+    <footer className="bg-gradient-to-br from-portfolio-background via-portfolio-card/30 to-portfolio-background border-t border-portfolio-border relative">
+      {/* Scroll to top button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-6 right-6 p-3 rounded-full portfolio-button-gradient text-white shadow-lg hover:scale-110 transition-all duration-300 z-50"
+        aria-label="Scroll to top"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
       <div className="container mx-auto px-6 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">

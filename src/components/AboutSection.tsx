@@ -4,14 +4,8 @@ import profileImage from "@/assets/profile-photo.png";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-portfolio-background relative overflow-hidden cursor-none">
-      {/* Background geometric shapes */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-10 w-32 h-32 border border-portfolio-purple-start/20 rotate-12 rounded-lg"></div>
-        <div className="absolute top-1/3 right-20 w-24 h-24 border border-portfolio-purple-end/20 rotate-45 rounded-full"></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 border border-portfolio-purple-start/10 -rotate-12"></div>
-        <div className="absolute top-10 right-10 w-0 h-0 border-l-[20px] border-r-[20px] border-b-[35px] border-l-transparent border-r-transparent border-b-portfolio-purple-start/30"></div>
-      </div>
+    <section id="about" className="py-20 bg-gradient-to-br from-portfolio-background via-portfolio-card to-portfolio-background relative overflow-hidden">
+      {/* Clean minimal background */}
       
       <div className="container mx-auto px-6 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

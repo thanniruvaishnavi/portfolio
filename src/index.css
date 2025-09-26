@@ -121,6 +121,15 @@
   .float-animation {
     animation: float 3s ease-in-out infinite;
   }
+
+  /* Custom cursor styles */
+  .custom-cursor {
+    cursor: url('./assets/cursor-triangle.png'), auto;
+  }
+
+  .custom-cursor * {
+    cursor: inherit;
+  }
 }
 
 @layer base {
