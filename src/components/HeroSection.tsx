@@ -46,10 +46,9 @@ const HeroSection = () => {
                 <TypewriterAnimation 
                   titles={[
                     "Software Developer 🔥",
-                    "React Developer 🔦",
-                    "Full Stack Developer 💡",
-                    "Cloud Enthusiast ☁️",
-                    "Tech Explorer 🧠"
+                    "React Developer ⚛️",
+                    "Full Stack Developer 🛠️",
+                    "Cloud Enthusiast ☁️"
                   ]}
                   className="text-3xl lg:text-4xl font-semibold"
                 />

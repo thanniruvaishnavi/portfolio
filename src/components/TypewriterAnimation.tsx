@@ -48,9 +48,9 @@ const TypewriterAnimation = ({ titles, className = "" }: TypewriterAnimationProp
   }, [currentText, isDeleting, currentTitleIndex, titles, isPaused]);
 
   return (
-    <span className={`font-mono text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 ${className}`}>
+    <span className={`font-mono ${className}`} style={{ color: '#FFB6C1' }}>
       {currentText}
-      <span className="animate-pulse text-cyan-400">|</span>
+      <span className="animate-pulse" style={{ color: '#FFB6C1' }}>|</span>
     </span>
   );
 };
