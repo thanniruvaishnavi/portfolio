@@ -15,7 +15,10 @@ const TypewriterAnimation = ({ titles, className = "" }: TypewriterAnimationProp
     const currentTitle = titles[currentTitleIndex];
     
     if (isPaused) {
-      const pauseTimer = setTimeout(() => setIsPaused(false), 2000);
+      const pauseTimer = setTimeout(() => {
+        setIsPaused(false);
+        setIsDeleting(true);
+      }, 1500);
       return () => clearTimeout(pauseTimer);
     }
 
@@ -38,20 +41,22 @@ const TypewriterAnimation = ({ titles, className = "" }: TypewriterAnimationProp
           return currentTitle.slice(0, prev.length + 1);
         }
       });
-
-      if (!isDeleting && currentText === currentTitle) {
-        setTimeout(() => setIsDeleting(true), 2000);
-      }
-    }, isDeleting ? 50 : 100);
+    }, isDeleting ? 75 : 120);
 
     return () => clearTimeout(timer);
   }, [currentText, isDeleting, currentTitleIndex, titles, isPaused]);
 
   return (
-    <span className={`font-mono ${className}`} style={{ color: '#FFB6C1' }}>
-      {currentText}
-      <span className="animate-pulse" style={{ color: '#FFB6C1' }}>|</span>
-    </span>
+    <div className="relative flex items-center justify-center">
+      {/* Circular dashed border */}
+      <div className="absolute inset-0 rounded-full border-2 border-dashed border-white/60 animate-pulse" style={{ width: '400px', height: '400px' }}></div>
+      
+      {/* Typewriter text */}
+      <span className={`font-mono text-pink-300 ${className}`}>
+        {currentText}
+        <span className="animate-pulse text-pink-300">|</span>
+      </span>
+    </div>
   );
 };
 
