@@ -42,14 +42,16 @@ const HeroSection = () => {
                 <span className="text-portfolio-foreground">I'm </span>
                 <span className="portfolio-gradient-text">Thanniru Vaishnavi</span>
               </h1>
-              <h2 className="text-3xl lg:text-4xl font-semibold text-portfolio-purple-start flex items-center justify-center lg:justify-start">
+              <h2 className="text-3xl lg:text-4xl font-semibold flex items-center justify-center lg:justify-start">
                 <TypewriterAnimation 
                   titles={[
                     "Software Developer 🔥",
-                    "React Developer",
-                    "Full Stack Developer",
-                    "Cloud Enthusiast"
+                    "React Developer 🔦",
+                    "Full Stack Developer 💡",
+                    "Cloud Enthusiast ☁️",
+                    "Tech Explorer 🧠"
                   ]}
+                  className="text-3xl lg:text-4xl font-semibold"
                 />
               </h2>
             </div>
