@@ -1,17 +1,18 @@
 const SkillsCircle = () => {
   const skills = [
+    { name: 'AWS', icon: '☁️', bgColor: '#FF9900' },
+    { name: 'JavaScript', icon: '🟨', bgColor: '#F7DF1E' },
     { name: 'React', icon: '⚛️', bgColor: '#61DAFB' },
     { name: 'Node.js', icon: '🟢', bgColor: '#339933' },
-    { name: 'AWS', icon: '☁️', bgColor: '#FF9900' },
-    { name: 'Docker', icon: '🐳', bgColor: '#2496ED' },
+    { name: 'Express.js', icon: '🚀', bgColor: '#000000' },
     { name: 'MongoDB', icon: '🍃', bgColor: '#47A248' },
-    { name: 'JavaScript', icon: '🟨', bgColor: '#F7DF1E' },
-    { name: 'Python', icon: '🐍', bgColor: '#3776AB' },
-    { name: 'Kubernetes', icon: '⚙️', bgColor: '#326CE5' },
+    { name: 'MySQL', icon: '🐬', bgColor: '#4479A1' },
+    { name: 'Django', icon: '🐍', bgColor: '#092E20' },
+    { name: 'Bootstrap', icon: '🅱️', bgColor: '#7952B3' },
+    { name: 'HTML', icon: '🌐', bgColor: '#E34F26' },
+    { name: 'CSS', icon: '🎨', bgColor: '#1572B6' },
     { name: 'Git', icon: '📝', bgColor: '#F05032' },
-    { name: 'Linux', icon: '🐧', bgColor: '#FCC624' },
-    { name: 'TypeScript', icon: '📘', bgColor: '#3178C6' },
-    { name: 'Express', icon: '🚀', bgColor: '#000000' },
+    { name: 'GitHub', icon: '🐙', bgColor: '#181717' },
   ];
 
   return (
@@ -73,9 +74,8 @@ const SkillsCircle = () => {
         })}
       </div>
 
-      {/* Dotted circle paths */}
-      <div className="absolute w-96 h-96 border-2 border-dashed border-white/70 rounded-full"></div>
-      <div className="absolute w-64 h-64 border-2 border-dashed border-white/70 rounded-full"></div>
+      {/* Glowing dashed circle paths */}
+      <div className="absolute w-96 h-96 border-2 border-dashed rounded-full neon-circle-glow"></div>
     </div>
   );
 };

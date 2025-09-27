@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Code, Download, MessageCircle } from "lucide-react";
 import SkillsCircle from "./SkillsCircle";
+import TypewriterAnimation from "./TypewriterAnimation";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -11,12 +12,17 @@ const scrollToSection = (id: string) => {
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center portfolio-gradient-bg relative overflow-hidden">
-      {/* Geometric grid lines */}
+    <section id="home" className="min-h-screen flex items-center justify-center hero-futuristic-bg relative overflow-hidden">
+      {/* Digital Circuit Pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
+        <div className="absolute inset-0 circuit-pattern"></div>
+      </div>
+      
+      {/* Tech Mesh Grid */}
       <div className="absolute inset-0 pointer-events-none opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundImage: `linear-gradient(rgba(0,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,255,0.3) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
         }}></div>
       </div>
       <div className="container mx-auto px-6 py-20 relative z-10">
@@ -37,7 +43,14 @@ const HeroSection = () => {
                 <span className="portfolio-gradient-text">Thanniru Vaishnavi</span>
               </h1>
               <h2 className="text-3xl lg:text-4xl font-semibold text-portfolio-purple-start flex items-center justify-center lg:justify-start">
-                Software Developer <span className="ml-2">🔥</span>
+                <TypewriterAnimation 
+                  titles={[
+                    "Software Developer 🔥",
+                    "React Developer",
+                    "Full Stack Developer",
+                    "Cloud Enthusiast"
+                  ]}
+                />
               </h2>
             </div>
 
