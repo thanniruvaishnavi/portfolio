@@ -76,6 +76,7 @@ const SkillsCircle = () => {
 
       {/* Glowing dashed circle paths */}
       <div className="absolute w-96 h-96 border-2 border-dashed rounded-full neon-circle-glow"></div>
+      <div className="absolute w-64 h-64 border-2 border-dashed rounded-full neon-circle-glow"></div>
     </div>
   );
 };
