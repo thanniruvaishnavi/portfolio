@@ -47,16 +47,10 @@ const TypewriterAnimation = ({ titles, className = "" }: TypewriterAnimationProp
   }, [currentText, isDeleting, currentTitleIndex, titles, isPaused]);
 
   return (
-    <div className="relative flex items-center justify-center">
-      {/* Circular dashed border */}
-      <div className="absolute inset-0 rounded-full border-2 border-dashed border-white/60 animate-pulse" style={{ width: '400px', height: '400px' }}></div>
-      
-      {/* Typewriter text */}
-      <span className={`font-mono text-pink-300 ${className}`}>
-        {currentText}
-        <span className="animate-pulse text-pink-300">|</span>
-      </span>
-    </div>
+    <span className={`font-mono text-pink-300 ${className}`}>
+      {currentText}
+      <span className="animate-pulse text-pink-300">|</span>
+    </span>
   );
 };
 

@@ -89,7 +89,7 @@ const ProjectsSection = () => {
           <p className="text-portfolio-purple-start font-semibold uppercase tracking-wider">
             PORTFOLIO SHOWCASE
           </p>
-          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
             FEATURED PROJECTS
           </h2>
           <p className="text-xl text-portfolio-muted max-w-3xl mx-auto">
@@ -171,18 +171,30 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                {/* GitHub Link */}
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="w-full bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground hover:bg-portfolio-card-hover"
-                  asChild
-                >
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 mr-2" />
-                    Source Code
-                  </a>
-                </Button>
+                {/* Action Buttons */}
+                <div className="flex space-x-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="flex-1 bg-portfolio-background-secondary border-portfolio-border text-portfolio-foreground hover:bg-portfolio-card-hover"
+                    asChild
+                  >
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4 mr-2" />
+                      Source Code
+                    </a>
+                  </Button>
+                  <Button 
+                    size="sm"
+                    className="flex-1 portfolio-button-gradient border-0 text-white"
+                    asChild
+                  >
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Live Demo
+                    </a>
+                  </Button>
+                </div>
               </div>
             </Card>
           ))}

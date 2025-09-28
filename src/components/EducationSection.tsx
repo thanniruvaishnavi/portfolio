@@ -36,7 +36,7 @@ const EducationSection = () => {
     <section id="education" className="py-20 bg-portfolio-background-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center space-y-6 mb-16">
-          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
             EDUCATION
           </h2>
           <p className="text-xl text-portfolio-muted max-w-2xl mx-auto">

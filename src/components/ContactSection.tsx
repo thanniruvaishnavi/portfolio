@@ -59,7 +59,7 @@ const ContactSection = () => {
           <p className="text-portfolio-purple-start font-semibold uppercase tracking-wider">
             Let's Talk
           </p>
-          <h2 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-2xl">
             CONTACT ME
           </h2>
           <p className="text-xl text-portfolio-muted max-w-2xl mx-auto">
@@ -70,11 +70,12 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Left Side - What's Cooking Cards */}
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-portfolio-foreground mb-8">
-              What's Cooking?
-            </h3>
+            <div className="border-2 border-portfolio-border rounded-lg p-6 bg-portfolio-card">
+              <h3 className="text-3xl font-bold text-portfolio-foreground mb-8">
+                What's Cooking?
+              </h3>
 
-            <div className="space-y-6">
+              <div className="space-y-6">
               <Card className="p-6 bg-portfolio-card border-portfolio-border hover:bg-portfolio-card-hover hover:border-portfolio-purple-start transition-all duration-300 group">
                 <div className="flex items-start space-x-4">
                   <div className="p-3 rounded-full portfolio-button-gradient group-hover:scale-110 transition-transform duration-300">
@@ -162,6 +163,7 @@ const ContactSection = () => {
                   </div>
                 </div>
               </Card>
+              </div>
             </div>
           </div>
 
