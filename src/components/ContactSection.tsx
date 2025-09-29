@@ -18,9 +18,9 @@ const formSchema = z.object({
 });
 
 // EmailJS Configuration
-const EMAILJS_SERVICE_ID = "service_your_id"; // Replace with your EmailJS Service ID
-const EMAILJS_TEMPLATE_ID = "template_your_id"; // Replace with your EmailJS Template ID  
-const EMAILJS_PUBLIC_KEY = "your_public_key"; // Replace with your EmailJS Public Key
+const EMAILJS_SERVICE_ID = "service_06ysxfz";
+const EMAILJS_TEMPLATE_ID = "_ejs-test-mail-service_";
+const EMAILJS_PUBLIC_KEY = "ETvbeRhJNXz9yXg7u";
 
 const ContactSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
