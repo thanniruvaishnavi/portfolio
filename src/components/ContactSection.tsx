@@ -9,12 +9,18 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const formSchema = z.object({
   name: z.string().trim().min(2, { message: "Name must be at least 2 characters." }).max(50, { message: "Name must be less than 50 characters." }),
   email: z.string().trim().email({ message: "Please enter a valid email address." }),
   message: z.string().trim().min(10, { message: "Message must be at least 10 characters." }).max(500, { message: "Message must be less than 500 characters." })
 });
+
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = "service_your_id"; // Replace with your EmailJS Service ID
+const EMAILJS_TEMPLATE_ID = "template_your_id"; // Replace with your EmailJS Template ID  
+const EMAILJS_PUBLIC_KEY = "your_public_key"; // Replace with your EmailJS Public Key
 
 const ContactSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -31,22 +37,39 @@ const ContactSection = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      // For now, just show success message
-      // Real email functionality would require backend integration
-      console.log("Form submitted:", values);
-      setIsSubmitted(true);
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      form.reset();
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
+      // Prepare email parameters for EmailJS
+      const emailParams = {
+        from_name: values.name,
+        from_email: values.email,
+        message: values.message,
+        to_name: "Vaishnavi", // Your name
+        to_email: "thanniruvaishnavi9849@gmail.com" // Your email
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        emailParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      if (response.status === 200) {
+        setIsSubmitted(true);
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        form.reset();
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      }
     } catch (error) {
+      console.error("EmailJS Error:", error);
       toast({
-        title: "Something went wrong",
-        description: "Please try again later.",
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
         variant: "destructive"
       });
     }
@@ -260,7 +283,7 @@ const ContactSection = () => {
             </Card>
             
             <div className="text-center text-sm text-portfolio-muted">
-              <p>For actual email delivery, connect to Supabase backend integration.</p>
+              <p>✨ Powered by EmailJS - Messages delivered directly to my inbox!</p>
             </div>
           </div>
         </div>
