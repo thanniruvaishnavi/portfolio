@@ -19,7 +19,7 @@ const formSchema = z.object({
 
 // EmailJS Configuration
 const EMAILJS_SERVICE_ID = "service_06ysxfz";
-const EMAILJS_TEMPLATE_ID = "_ejs-test-mail-service_";
+const EMAILJS_TEMPLATE_ID = "template_dqgi1w6";
 const EMAILJS_PUBLIC_KEY = "ETvbeRhJNXz9yXg7u";
 
 const ContactSection = () => {
