@@ -65,11 +65,23 @@ const ContactSection = () => {
         // Reset success message after 5 seconds
         setTimeout(() => setIsSubmitted(false), 5000);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("EmailJS Error:", error);
+      
+      // More specific error handling
+      let errorMessage = "Please try again or contact me directly via email.";
+      
+      if (error?.text?.includes("template ID not found")) {
+        errorMessage = "Email template not configured. Please contact me directly via email.";
+      } else if (error?.text?.includes("service ID not found")) {
+        errorMessage = "Email service not configured. Please contact me directly via email.";
+      } else if (error?.status === 400) {
+        errorMessage = "Invalid email configuration. Please contact me directly via email.";
+      }
+      
       toast({
         title: "Failed to send message",
-        description: "Please try again or contact me directly via email.",
+        description: errorMessage,
         variant: "destructive"
       });
     }
